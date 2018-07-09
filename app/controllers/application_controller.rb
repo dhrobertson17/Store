@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-	before_action :categories, :brand
+	before_action :categories, :brands
 
 	def categories
 		@categories = Category.order(:name)

@@ -2,7 +2,8 @@ class CreateOrders < ActiveRecord::Migration[5.2]
   def change
     create_table :orders do |t|
       t.decimal :subtotal
-      t.decimalgrand_total :sales_tax
+      t.decimal :grand_total 
+      t.decimal :sales_tax
       t.integer :user_id
       t.text :order_items
 

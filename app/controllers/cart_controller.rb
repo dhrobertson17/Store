@@ -13,6 +13,13 @@ class CartController < ApplicationController
   	@line_items = LineItem.all
   end
 
+  def delete_item
+    line_item = LineItem.find(params[:id])
+    line_item.destroy
+
+    redirect_back(fallback_location: root_path)
+  end
+
   def checkout
     line_items = LineItem.all
     @order = Order.create(user_id: current_user.id, subtotal: 0)
@@ -26,4 +33,5 @@ class CartController < ApplicationController
     @order.update(grand_total: (@order.subtotal + @order.sales_tax))
     line_items.destroy_all
   end
+
 end

@@ -48,6 +48,10 @@ gem 'carrierwave'
 #levels of authorization
 gem 'cancancan'
 
+gem 'stripe'
+
+gem 'figaro'
+
 #makes rails c look better
 gem 'hirb'
 
